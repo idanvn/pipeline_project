@@ -90,6 +90,7 @@ kubectl apply -f python-app/deployment.yaml
    - פריסה: בדוק `kubectl get pods`.
 
 ## 📊 דיאגרמת Pipeline
+```mermaid
 graph TD
     A[Checkout from GitHub] --> B[Node.js: Install & Test]
     A --> C[Python: Install & Test]
@@ -100,6 +101,7 @@ graph TD
     F --> G[Build Docker Images]
     G --> H[Deploy to Kubernetes]
     H --> I[Slack Notifications]
+ ```
 
 ## 📈 שלבי ה-Pipeline
 | שלב                     | תיאור                                                                 |
