@@ -1,4 +1,4 @@
-# 🚀 הדגמת CI/CD מאובטח: Node.js, Python, Jenkins, SonarQube, Docker ו-Kubernetes
+# 🚀 הדגמת CI/CD מאובטח: Node.js, Python, Jenkins, SonarQube ו-Kubernetes
 
 ![CI/CD Pipeline](https://img.shields.io/badge/Status-Build%20Passing-brightgreen)
 ![SonarQube](https://img.shields.io/badge/SonarQube-Quality%20Gate-blue)
@@ -8,18 +8,15 @@
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-Enabled-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-**מחבר**: Eidan Vy  
-**מאגר GitHub**: [https://github.com/idanvn/pipeline_project.git](https://github.com/idanvn/pipeline_project.git)
-
-ברוכים הבאים לפרויקט הדגמה מתקדם של **CI/CD מאובטח** מאת Eidan Vy, המשלב **Jenkins**, **SonarQube**, **Node.js**, **Python**, **Docker**, ו-**Kubernetes**. פרויקט זה מציג תהליך בנייה אוטומטי, מאובטח ואיכותי, הכולל שליפת קוד, בדיקות, ניתוח קוד סטטי, פריסה ב-Docker ו-Kubernetes, ושליחת התראות ל-Slack. הוא תוכנן להדרכות טכניות, ומדגים ניהול פרויקט מרובה שפות תוך שמירה על סטנדרטים גבוהים של אבטחה, איכות קוד, וסקיילביליות. כולל תיעוד מפורט, דוגמאות קוד, דיאגרמות, ותסריט הדרכה.
+ברוכים הבאים לפרויקט הדגמה מתקדם של **CI/CD מאובטח** המשלב **Jenkins**, **SonarQube**, **Node.js**, **Python**, **Docker**, ו-**Kubernetes** במאגר GitHub. פרויקט זה מציג תהליך בנייה אוטומטי, מאובטח ואיכותי, הכולל שליפת קוד, בדיקות, ניתוח קוד סטטי, פריסה ב-Docker ו-Kubernetes, ושליחת התראות ל-Slack. הוא תוכנן להדרכות טכניות, ומדגים ניהול פרויקט מרובה שפות תוך שמירה על סטנדרטים גבוהים של אבטחה, איכות קוד, וסקיילביליות. כולל תיעוד מפורט, דוגמאות קוד, דיאגרמות, ותסריט הדרכה.
 
 ## 🎯 מטרות הפרויקט
 - **הדגמת CI/CD מאובטח**: pipeline שלם ב-Jenkins עם בדיקות, ניתוח קוד, ופריסה.
 - **ניתוח קוד עם SonarQube**: בדיקת איכות ואבטחה עבור Node.js ו-Python.
-- **פריסה מודרנית**: בניית תמונות Docker ופריסה ב-Kubernetes.
-- **שילוב GitHub**: הפעלה אוטומטית עם Webhooks ותמיכה ב-Pull Requests.
+- **פריסה עם Docker ו-Kubernetes**: בניית תמונות Docker ופריסה ב-Kubernetes.
+- **שילוב עם GitHub**: הפעלה אוטומטית עם Webhooks ותמיכה ב-Pull Requests.
 - **שיתוף פעולה**: התראות Slack עם סטטוס וקישור ללוגים.
-- **הדרכה מתקדמת**: תיעוד ותסריט הדרכה עם תרחישי כשל.
+- **הדרכה מתקדמת**: תיעוד, דיאגרמות, ותסריט הדרכה עם תרחישי כשל.
 
 ## 🔍 מדוע SonarQube הוא קריטי?
 SonarQube משפר את ה-CI/CD על ידי:
@@ -30,11 +27,11 @@ SonarQube משפר את ה-CI/CD על ידי:
 - **תמיכה מרובת שפות**: תומך ב-JavaScript ו-Python.
 - **שערי איכות**: מפסיק את ה-pipeline אם הקוד לא עומד בקריטריונים (למשל, כיסוי בדיקות <80%).
 - **שילוב GitHub**: ניתוח Pull Requests והערות אוטומטיות.
-- **Shift-Left**: זיהוי בעיות מוקדם להפחתת עלויות.
+- **Shift-Left**: זיהוי בעיות מוקדם להפחתת עלויות תיקון.
 
 ## 📂 מבנה הפרויקט
 ```
-pipeline_project/
+cool-ci-cd-app/
 ├── node-app/
 │   ├── package.json          # תלויות Node.js
 │   ├── index.js             # API עם Express
@@ -70,13 +67,68 @@ pipeline_project/
 |---------------|------------------------------------------------------------------------|
 | **Jenkins**   | גרסה 2.x+, פלאגינים: Git, NodeJS, Python, SonarQube Scanner, Slack Notification, Pipeline Utility Steps. |
 | **SonarQube** | גרסה 9.x/10.x, זמין ב-`http://sonarqube-server:9000`.                  |
-| **GitHub**    | מאגר: [https://github.com/idanvn/pipeline_project.git](https://github.com/idanvn/pipeline_project.git), טוקן עם `repo`. |
+| **GitHub**    | מאגר, טוקן עם הרשאות `repo`.                                        |
 | **Slack**     | Webhook להתראות.                                                     |
-| **Docker**    | Docker Engine לבניית תמונות.                                         |
-| **Kubernetes**| קלאסomethane: minikube start
-kubectl apply -f node-app/deployment.yaml
-kubectl apply -f python-app/deployment.yaml
-```
+| **Docker**    | Docker Engine להתקנת תמונות.                                         |
+| **Kubernetes**| קלאסטר (למשל, Minikube או EKS) לפריסה.                              |
+| **כלים**     | Node.js (16.x+), Python (3.x), SonarQube Scanner.                      |
+
+## 📖 הוראות התקנה
+
+### 1. Jenkins
+1. **פלאגינים**:
+   - התקן: Git, NodeJS, Python, SonarQube Scanner, Slack Notification, Pipeline Utility Steps.
+2. **כלים**:
+   - ב-"Manage Jenkins > Global Tool Configuration":
+     - Node.js: `Node16` (16.x+).
+     - Python: `Python3` (3.x).
+3. **SonarQube**:
+   - ב-"Manage Jenkins > Configure System > SonarQube servers":
+     - שם: `SonarQube`, כתובת: `http://sonarqube-server:9000`.
+4. **Credentials**:
+   - `github-token`: טוקן GitHub (`repo`).
+   - `sonarqube-token`: טוקן SonarQube.
+   - `slack-webhook`: Webhook של Slack.
+
+### 2. SonarQube
+1. **הפעלה**:
+   - התקן: `docker run -d -p 9000:9000 sonarqube`.
+2. **פרויקטים**:
+   - צור: `cool-node-app`, `cool-python-app`.
+3. **Quality Gates**:
+   - כיסוי בדיקות >80%, 0 פגיעויות קריטיות, <5% Code Smells.
+4. **טוקן**:
+   - צור טוקן ב-"My Account > Security" ושמור כ-`sonarqube-token`.
+
+### 3. GitHub
+1. **מאגר**:
+   - העלה את כל הקבצים, כולל `Dockerfile` ו-`deployment.yaml`.
+2. **טוקן**:
+   - צור טוקן עם `repo` ושמור כ-`github-token`.
+3. **Webhook**:
+   - הוסף: `http://jenkins-server:8080/github-webhook/` (אירועים: `push`, `pull request`).
+
+### 4. Slack
+1. **Webhook**:
+   - צור ב-Slack, בחר ערוץ (למשל, `#ci-cd-notifications`), והעתק.
+2. **שמירה**:
+   - שמור כ-`slack-webhook` ב-Jenkins.
+
+### 5. Docker ו-Kubernetes
+1. **Docker**:
+   - ודא ש-Docker מותקן.
+   - בנה תמונות:
+     ```bash
+     docker build -t node-app:latest ./node-app
+     docker build -t python-app:latest ./python-app
+     ```
+2. **Kubernetes**:
+   - ודא קלאסטר זמין (למשל, Minikube: `minikube start`).
+   - פרוס:
+     ```bash
+     kubectl apply -f node-app/deployment.yaml
+     kubectl apply -f python-app/deployment.yaml
+     ```
 
 ## 🚀 הרצת ה-Pipeline
 1. **עבודה ב-Jenkins**:
@@ -106,14 +158,14 @@ graph TD
 ## 📈 שלבי ה-Pipeline
 | שלב                     | תיאור                                                                 |
 |-------------------------|----------------------------------------------------------------------|
-| **Checkout**            | שליפת קוד מ-[https://github.com/idanvn/pipeline_project.git](https://github.com/idanvn/pipeline_project.git). |
+| **Checkout**            | שליפת קוד ממאגר GitHub.                                             |
 | **Node.js: Install and Test** | `npm install`, בדיקות Jest, דוחות כיסוי (lcov).                     |
 | **Python: Install and Test** | `pip install`, בדיקות pytest, דוחות כיסוי (XML).                   |
 | **SonarQube Analysis: Node.js** | ניתוח JavaScript (באגים, אבטחה, כיסוי).                          |
 | **SonarQube Analysis: Python** | ניתוח Python (באגים, אבטחה, כיסוי).                              |
 | **Quality Gate**        | כשלון אם הקריטריונים לא מתקיימים.                                  |
 | **Build Docker Images** | בניית תמונות Docker עבור Node.js ו-Python.                          |
-| **Deploy to Kubernetes**| פריסת תמונות עם `kubectl apply`.                                    |
+| **Deploy to Kubernetes**| פריסת תמונות ל-Kubernetes עם `kubectl apply`.                        |
 | **Slack Notifications** | התראה (ירוק/אדום) עם קישור ללוגים.                                |
 
 ## 💻 דוגמאות קוד
@@ -225,18 +277,17 @@ def test_data_missing_name(client):
 - **אחסון סודות**: טוקנים מאוחסנים כ-Credentials ב-Jenkins.
 - **שערי איכות**: מפסיקים את ה-pipeline אם יש פגיעויות (למשל, XSS).
 - **בדיקות**: דוחות כיסוי (Jest, pytest) משולבים ב-SonarQube.
-- **Kubernetes**: Liveness Probes וגבולות משאבים ליציבות.
+- **Kubernetes**: Liveness Probes וגבולות משאבים להגברת יציבות.
 
 ## 🧑‍🏫 תסריט הדרכה
 1. **הצגת הפרויקט**:
-   - הסבר מבנה המאגר: [https://github.com/idanvn/pipeline_project.git](https://github.com/idanvn/pipeline_project.git).
-   - הדגש תפקיד Docker/Kubernetes.
+   - הסבר מבנה המאגר ותפקיד Docker/Kubernetes.
 2. **הרצת Pipeline**:
    - הרץ ב-Jenkins, הצג לוגים.
    - הדגם כשל Quality Gate (למשל, הוסף `eval` ב-JavaScript).
 3. **SonarQube**:
    - הצג Dashboard: Issues, Security Hotspots, Coverage.
-   - תקן פגיעות והראה שיפור.
+   - תקן פגיעות (למשל, קלט לא מסונן) והראה שיפור.
 4. **Docker ו-Kubernetes**:
    - בנה תמונות: `docker build`.
    - פרוס: `kubectl apply`.
@@ -288,11 +339,11 @@ def test_data_missing_name(client):
 | **Kubernetes פריסה נכשלת**      | בדוק `kubectl get pods` וודא שהקלאסטר זמין.                        |
 
 ## 🤝 תרומות
-פתח Issue או Pull Request ב-[https://github.com/idanvn/pipeline_project.git](https://github.com/idanvn/pipeline_project.git). תרומות יתקבלו בברכה!
+פתח Issue או Pull Request עם הצעות או הרחבות. תרומות יתקבלו בברכה!
 
 ## 📜 רישיון
 מופץ תחת רישיון MIT.
 
 ---
 
-*נבנה על ידי Eidan Vy עבור הדרכות CI/CD מתקדמות, עם דגש על אבטחה, איכות קוד, ופריסה מודרנית.*
+*עוצב עבור הדרכות CI/CD מתקדמות, עם דגש על אבטחה, איכות קוד, ופריסה מודרנית.*
