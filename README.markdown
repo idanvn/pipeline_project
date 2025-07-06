@@ -87,7 +87,7 @@ kubectl apply -f python-app/deployment.yaml
    - לוגים: Jenkins Console Output.
    - תוצאות: SonarQube Dashboard.
    - התראות: Slack.
-   - פריסה: `kubectl get pods`, `kubectl get services`.
+   - פריסה: בדוק `kubectl get pods`.
 
 ## 📊 דיאגרמת Pipeline
 ```mermaid
